@@ -1,0 +1,32 @@
+<mat-toolbar color="primary" class="toolbar" height="80">
+  <mat-toolbar-row>
+    <div class="logo">
+      <img src="assets/loan-logo.png" height="35"/>
+    </div>
+    <div style="width: 80%;">
+      <div fxLayout="row wrap" fxLayoutAlign="end start">
+        <button mat-button routerLink="/">Home</button>
+        <button mat-button routerLink="/about-us">About</button>
+        <button mat-button routerLink="/contact-us">Contact Us</button>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<br />
+<br />
+<div fxLayout="row wrap">
+  <div fxFlex>
+    <mat-card class="main-container">
+      <mat-card-title >
+
+      </mat-card-title>
+
+      <br />
+      <br />
+
+      <mat-card-content>
+        <router-outlet></router-outlet>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

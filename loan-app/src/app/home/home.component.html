@@ -1,0 +1,27 @@
+<div>
+  <h1 style="text-align: center;">Welcome to the Loan Application!</h1>
+</div>
+<hr>
+<br /><br />
+<div fxLayout="row wrap" fxLayoutGap="20px">
+  <div fxFlex class="loan-form">
+    <mat-card class="mat-elevation-z8">
+      <mat-card-content fxFlex="column">
+        <form>
+          <mat-form-field>
+            <mat-label>Loan Amount</mat-label>
+            <input matInput type="text" aria-label="loan" id="txtLoan" formControlName="loan" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Interest Rate</mat-label>
+            <input matInput type="text" id="txtInterest" formControlName="interest" />
+          </mat-form-field>
+        </form>
+
+          <button mat-raised-button color="primary" [disabled]="" type="submit">Submit</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
