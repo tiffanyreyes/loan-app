@@ -13,7 +13,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $loan-app-primary: mat-palette($mat-green, 900);
-$loan-app-accent: mat-palette($mat-yellow, A200, A100, A400);
+$loan-app-accent: mat-palette($mat-yellow, A700, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $loan-app-warn: mat-palette($mat-red);
@@ -33,3 +33,10 @@ $loan-app-theme: mat-light-theme((
 // that you are using.
 @include angular-material-theme($loan-app-theme);
 
+.primary-color {
+  color: mat-color($loan-app-primary);
+}
+
+.accent-color {
+  color: mat-color($loan-app-accent);
+}

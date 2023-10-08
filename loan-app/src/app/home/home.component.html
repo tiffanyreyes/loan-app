@@ -1,27 +1,44 @@
 <div>
-  <h1 style="text-align: center;">Welcome to the Loan Application!</h1>
+  <h1 class="primary-color" style="text-align: center;">Welcome to the Loan Application!</h1>
 </div>
 <hr>
 <br /><br />
+<mat-slide-toggle color="accent" (change)="toggleLoan($event)">
+  Compare Loans
+</mat-slide-toggle>
+<br /><br />
 <div fxLayout="row wrap" fxLayoutGap="20px">
-  <div fxFlex class="loan-form">
-    <mat-card class="mat-elevation-z8">
-      <mat-card-content fxFlex="column">
-        <form>
-          <mat-form-field>
-            <mat-label>Loan Amount</mat-label>
-            <input matInput type="text" aria-label="loan" id="txtLoan" formControlName="loan" />
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Interest Rate</mat-label>
-            <input matInput type="text" id="txtInterest" formControlName="interest" />
-          </mat-form-field>
-        </form>
+  <mat-card fxFlex class="mat-elevation-z8">
+    <mat-card-content>
+      <app-loan (loanSubmit)="displayFirstLoan($event)"></app-loan>
 
-          <button mat-raised-button color="primary" [disabled]="" type="submit">Submit</button>
-      </mat-card-content>
-    </mat-card>
-  </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card fxFlex class="mat-elevation-z8" *ngIf="showSecondLoan">
+    <mat-card-content>
+      <app-loan (loanSubmit)="displaySecondLoan($event)"></app-loan>
+    </mat-card-content>
+  </mat-card>
+</div>
+<br />
+<br />
+<div fxLayout="row wrap" fxLayoutGap="20px">
+  <mat-card fxFlex class="mat-elevation-z8">
+    <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="24px" class="primary-color">
+      <h2>Your Monthly Payment:</h2>
+      <span style="font-size: 48px; line-height: 54px;" *ngIf="firstMonthlyPayment">{{ firstMonthlyPayment | number: '1.1-2' }}</span>
+      <h2>Interest Paid:</h2>
+      <span style="font-size: 48px; line-height: 54px;" *ngIf="firstInterestPaid">{{ firstInterestPaid | number: '1.2-2' }}</span>
+    </mat-card-content>
+  </mat-card>
+  <mat-card fxFlex *ngIf="showSecondLoan" class="mat-elevation-z8">
+    <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="24px" class="primary-color">
+      <h2>Your Monthly Payment:</h2>
+      <span style="font-size: 48px; line-height: 54px;" *ngIf="secondMonthlyPayment">{{ secondMonthlyPayment | number: '1.1-2' }}</span>
+      <h2>Interest Paid:</h2>
+      <span style="font-size: 48px; line-height: 54px;" *ngIf="secondInterestPaid">{{ secondInterestPaid | number: '1.2-2' }}</span>
+    </mat-card-content>
+  </mat-card>
 </div>
 
 

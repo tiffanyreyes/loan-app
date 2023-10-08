@@ -1,0 +1,23 @@
+<form [formGroup]="loanForm" (ngSubmit)="calculateLoan()" fxLayout="column">
+  <mat-form-field fxFlex hintLabel="Enter amount as a number without commas (ex. 10000)" appearance="standard">
+    <mat-label>Loan Amount</mat-label>
+    <input matInput type="text" aria-label="loan" id="txtLoan" formControlName="loan" />
+    <span matPrefix>$&nbsp;</span>
+    <mat-error *ngIf="loanForm.controls.loan.invalid">{{getLoanErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field fxFlex hintLabel="Enter as a percentage (ex. 5.47)" appearance="standard">
+    <mat-label>Interest Rate</mat-label>
+    <input matInput type="text" id="txtInterest" formControlName="interest" />
+    <span matSuffix>%</span>
+    <mat-error *ngIf="loanForm.controls.interest.invalid">{{getInterestErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field fxFlex appearance="standard">
+    <mat-label>Loan Term</mat-label>
+    <mat-select formControlName="termLength">
+      <mat-option *ngFor="let term of terms" [value]="term.value">
+        {{ term.displayValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" [disabled]="!loanForm.valid" type="submit">Submit</button>
+</form>

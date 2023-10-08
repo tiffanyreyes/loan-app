@@ -1,3 +1,11 @@
+/**
+ * Title: app-routing.component.ts
+ * Author: Tiffany Reyes
+ * Date: 07 Oct 2023
+ * Description: app-routing component
+ */
+
+// importing classes and modules
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';

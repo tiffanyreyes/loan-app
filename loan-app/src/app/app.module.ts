@@ -1,3 +1,11 @@
+/**
+ * Title: app.module.ts
+ * Author: Tiffany Reyes
+ * Date: 07 Oct 2023
+ * Description: app module
+ */
+
+// importing classes and modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,6 +26,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { LoanComponent } from './loan/loan.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +35,7 @@ import { MatSelectModule } from '@angular/material/select';
     AboutUsComponent,
     ContactUsComponent,
     HomeComponent,
+    LoanComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +51,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatListModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
